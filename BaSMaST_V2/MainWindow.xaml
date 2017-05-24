@@ -1,0 +1,64 @@
+﻿<Window x:Name="mainWindow" x:Class="BaSMaST_V3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BaSMaST_V3"
+        mc:Ignorable="d"
+        Title="BaSMaST" Height="633.333" Width="1192" WindowStartupLocation="Manual" IsTabStop="False" WindowStyle="None" AllowsTransparency="True" Background="{StaticResource Gray2}" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Foreground="Black" WindowState="Maximized" MinWidth="700" MinHeight="600" ResizeMode="NoResize">
+    <Grid x:Name="Grid" Margin="0,0,-0.333,-0.333">
+        <DockPanel x:Name="Screen" Background="{StaticResource Gray2}" Margin="15,0,15,15" LastChildFill="True">
+            <DockPanel x:Name="TitleBar" LastChildFill="True" VerticalAlignment="Top" DockPanel.Dock="Top" MinHeight="30" MaxHeight="40" Margin="0,5,0,0" Background="{StaticResource Gray2}">
+                <Button x:Name="CloseBtn" MinWidth="20" MinHeight="20" MaxWidth="20" MaxHeight="20" Style="{DynamicResource TitleBarButtonRed}" Margin="2.5,5" HorizontalContentAlignment="Right" VerticalContentAlignment="Stretch" DockPanel.Dock="Right" BorderThickness="0" SnapsToDevicePixels="True" ClipToBounds="True" Width="20" Height="20" Background="{x:Null}"/>
+                <!--<Button x:Name="ResizeBtn" MinWidth="20" MinHeight="20" MaxWidth="20" MaxHeight="20" Style="{DynamicResource TitleBarButtonGray}" Margin="2.5,5" HorizontalContentAlignment="Right" VerticalContentAlignment="Stretch" DockPanel.Dock="Right" BorderThickness="0" SnapsToDevicePixels="True" ClipToBounds="True" Width="20" Height="20" Background="{x:Null}"/>-->
+                <Button x:Name="MinimizeBtn" MinWidth="20" MinHeight="20" MaxWidth="20" MaxHeight="20" Style="{DynamicResource TitleBarButtonGray}" Margin="2.5,5" HorizontalContentAlignment="Right" VerticalContentAlignment="Stretch" DockPanel.Dock="Right" BorderThickness="0" SnapsToDevicePixels="True" ClipToBounds="True" Width="20" Height="20" Background="{x:Null}"/>
+                <Label x:Name="WindowTitle" Margin="0,5,5,5"/>
+            </DockPanel>
+            <DockPanel x:Name="ContentDock" LastChildFill="True" RenderTransformOrigin="0.5,0.5" Background="{StaticResource Gray3}">
+                <DockPanel x:Name="MenuStrip" DockPanel.Dock="Top" Background="#FFB9B9B9">
+                    <Button x:Name="MenuBtn" MinWidth="40" MinHeight="40" MaxWidth="40" MaxHeight="40" Margin="5" HorizontalContentAlignment="Left" VerticalContentAlignment="Stretch" DockPanel.Dock="Left" BorderThickness="0" SnapsToDevicePixels="True" ClipToBounds="True" Width="40" Height="40"/>
+                    <Button x:Name="SettingsBtn" MinWidth="40" MinHeight="40" MaxWidth="40" MaxHeight="40" Margin="2.5,5" HorizontalContentAlignment="Right" VerticalContentAlignment="Stretch" DockPanel.Dock="Right" BorderThickness="0" SnapsToDevicePixels="True" ClipToBounds="True" Width="40" Height="40"/>
+                    <Button x:Name="HelpBtn" MinWidth="40" MinHeight="40" MaxWidth="40" MaxHeight="40" Margin="2.5,5" HorizontalContentAlignment="Right" VerticalContentAlignment="Stretch" DockPanel.Dock="Right" BorderThickness="0" SnapsToDevicePixels="True" ClipToBounds="True" Width="40" Height="40"/>
+                    <Button x:Name="Seperator" MinWidth="20" MinHeight="40" MaxWidth="20" MaxHeight="40" Margin="2.5,5" HorizontalContentAlignment="Right" VerticalContentAlignment="Stretch" DockPanel.Dock="Right" BorderThickness="0" SnapsToDevicePixels="True" ClipToBounds="True" Width="20" Height="40"/>
+                    <Button x:Name="TaskBtn" MinWidth="40" MinHeight="40" MaxWidth="40" MaxHeight="40" Margin="2.5,5" HorizontalContentAlignment="Right" VerticalContentAlignment="Stretch" DockPanel.Dock="Right" BorderThickness="0" SnapsToDevicePixels="True" ClipToBounds="True" Width="40" Height="40" IsEnabled="False"/>
+                    <Button x:Name="HomeBtn" MinWidth="40" MinHeight="40" MaxWidth="40" MaxHeight="40" Margin="2.5,5" HorizontalContentAlignment="Right" VerticalContentAlignment="Stretch" DockPanel.Dock="Right" BorderThickness="0" SnapsToDevicePixels="True" ClipToBounds="True" Width="40" Height="40" IsEnabled="False"/>
+                    <Button x:Name="Seperator1" MinWidth="20" MinHeight="40" MaxWidth="20" MaxHeight="40" Margin="2.5,5" HorizontalContentAlignment="Right" VerticalContentAlignment="Stretch" DockPanel.Dock="Right" BorderThickness="0" SnapsToDevicePixels="True" ClipToBounds="True" Width="20" Height="40"/>
+                    <Button x:Name="SearchBtn" MinWidth="250" MinHeight="25" MaxWidth="250" MaxHeight="25" Margin="2.5,5" HorizontalContentAlignment="Right" VerticalContentAlignment="Stretch" DockPanel.Dock="Right" BorderThickness="0" SnapsToDevicePixels="True" ClipToBounds="True" Width="250" Height="25"/>
+                    <Label x:Name="ScreenTitle" MinWidth="200" MinHeight="40" MaxHeight="40" HorizontalContentAlignment="Center" VerticalAlignment="Center" />
+                </DockPanel>
+                <DockPanel x:Name="Menu" DockPanel.Dock="Left" MaxWidth="210" MinWidth="210" HorizontalAlignment="Left">
+                    <StackPanel x:Name="MenuStack1" MinWidth="209" MaxWidth="210" MinHeight="79" MaxHeight="80" DockPanel.Dock="Top" VerticalAlignment="Top" Orientation="Horizontal" Margin="1" >
+                        <Button x:Name="NewProjectBtn" MinWidth="70" MinHeight="70" MaxWidth="70" MaxHeight="70" Margin="5,5,0,5" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" BorderThickness="0" SnapsToDevicePixels="True" ClipToBounds="True" Width="70" Height="70" Background="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <Label x:Name="NewProjectLabel" HorizontalAlignment="Right" MinWidth="120" MaxWidth="120" VerticalContentAlignment="Center" MinHeight="25" MaxHeight="100" VerticalAlignment="Center" Margin="0,5,20,5" />
+                    </StackPanel>
+                    <StackPanel x:Name="MenuStack2" MinWidth="209" MaxWidth="210" MinHeight="79" MaxHeight="80" DockPanel.Dock="Top" VerticalAlignment="Top" Orientation="Horizontal" Margin="1" >
+                        <Button x:Name="OpenProjectBtn" MinWidth="70" MinHeight="70" MaxWidth="70" MaxHeight="70" Margin="5,5,0,5" HorizontalContentAlignment="Left" VerticalContentAlignment="Stretch" DockPanel.Dock="Top" BorderThickness="0" SnapsToDevicePixels="True" ClipToBounds="True" Width="70" Height="70" VerticalAlignment="Top" Background="{x:Null}" HorizontalAlignment="Center"/>
+                        <Label x:Name="OpenProjectLabel" HorizontalAlignment="Right" MinWidth="120" MaxWidth="120" VerticalContentAlignment="Center" MinHeight="25" MaxHeight="100" VerticalAlignment="Center" Margin="0,5,20,5" />
+                    </StackPanel>
+                    <StackPanel x:Name="MenuStack3" MinWidth="209" MaxWidth="210" MinHeight="79" MaxHeight="80" DockPanel.Dock="Top" VerticalAlignment="Top" Orientation="Horizontal" Margin="1" >
+                        <Button x:Name="ConfigureProjectBtn" MinWidth="70" MinHeight="70" MaxWidth="70" MaxHeight="70" Margin="5,5,0,5" HorizontalContentAlignment="Left" VerticalContentAlignment="Stretch" DockPanel.Dock="Top" BorderThickness="0" SnapsToDevicePixels="True" ClipToBounds="True" Width="70" Height="70" VerticalAlignment="Top" Background="{x:Null}" HorizontalAlignment="Center"/>
+                        <Label x:Name="ConfigureProjectLabel" HorizontalAlignment="Right" MinWidth="120" MaxWidth="120" VerticalContentAlignment="Center" MinHeight="25" MaxHeight="100" VerticalAlignment="Center" Margin="0,5,20,5" />
+                    </StackPanel>
+                    <StackPanel x:Name="MenuStack4" MinWidth="209" MaxWidth="210" MinHeight="79" MaxHeight="80" DockPanel.Dock="Top" VerticalAlignment="Top" Orientation="Horizontal" Margin="1" >
+                        <Button x:Name="DeleteProjectBtn" MinWidth="70" MinHeight="70" MaxWidth="70" MaxHeight="70" Margin="5,5,0,5" HorizontalContentAlignment="Left" VerticalContentAlignment="Stretch" DockPanel.Dock="Top" BorderThickness="0" SnapsToDevicePixels="True" ClipToBounds="True" Width="70" Height="70" VerticalAlignment="Top" Background="{x:Null}" HorizontalAlignment="Center"/>
+                        <Label x:Name="DeleteProjectLabel" HorizontalAlignment="Right" MinWidth="120" MaxWidth="120" VerticalContentAlignment="Center" MinHeight="25" MaxHeight="100" VerticalAlignment="Center" Margin="0,5,20,5" />
+                    </StackPanel>
+                    <StackPanel x:Name="MenuStack5" MinWidth="209" MaxWidth="210" MinHeight="79" MaxHeight="80" DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Orientation="Horizontal" Margin="1" >
+                        <Button x:Name="CloseApplicationBtn" MinWidth="70" MinHeight="70" MaxWidth="70" MaxHeight="70" Margin="5,5,0,5" HorizontalContentAlignment="Left" VerticalContentAlignment="Stretch" DockPanel.Dock="Top" BorderThickness="0" SnapsToDevicePixels="True" ClipToBounds="True" Width="70" Height="70" VerticalAlignment="Top" Background="{x:Null}" HorizontalAlignment="Center"/>
+                        <Label x:Name="CloseLabel" HorizontalAlignment="Right" MinWidth="120" MaxWidth="120" VerticalContentAlignment="Center" MinHeight="25" MaxHeight="100" VerticalAlignment="Center" Margin="0,5,20,5" />
+                    </StackPanel>
+                </DockPanel>
+                <DockPanel x:Name="Settings" DockPanel.Dock="Right" MinWidth="200" MaxWidth="200">
+                    <StackPanel x:Name="ColorSchemas" DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
+                        <StackPanel x:Name="Blue" Margin="0,10"/>
+                        <StackPanel x:Name="Red" Margin="0,10"/>
+                        <StackPanel x:Name="Green" Margin="0,10"/>
+                        <StackPanel x:Name="Sun" Margin="0,10"/>
+                        <StackPanel x:Name="Gray" Margin="0,10,0,0"/>
+                    </StackPanel>
+                </DockPanel>
+                <DockPanel x:Name="ContentPanel" Background="{StaticResource Primary1}" LastChildFill="True"/>
+            </DockPanel>
+        </DockPanel>
+    </Grid>
+</Window>

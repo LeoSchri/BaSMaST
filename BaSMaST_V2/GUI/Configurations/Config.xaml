@@ -1,0 +1,65 @@
+﻿<Window  x:Class="BaSMaST_V3.Config"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BaSMaST_V3"
+        mc:Ignorable="d"
+        Title="Config" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Width="500" Height="600" Background="{StaticResource Gray2}" BorderThickness="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" AllowsTransparency="True" UseLayoutRounding="False" MinHeight="600">
+    <Grid>
+        <DockPanel x:Name="Screen" LastChildFill="true" Background="{StaticResource Gray1}" Margin="0">
+            <Label x:Name="WindowTitle" DockPanel.Dock="Top" Background="{StaticResource Gray1}" MinHeight="30" MaxHeight="60" HorizontalContentAlignment="Center" VerticalAlignment="Top"/>
+            <StackPanel x:Name="ButtonStack" DockPanel.Dock="Bottom" Orientation="Horizontal" Background="{StaticResource Gray3}" FlowDirection="RightToLeft" VerticalAlignment="Bottom" MinHeight="60" MaxHeight="60" Margin="10,-1,10,10">
+                <Button x:Name="Cancel" Style="{StaticResource PopupButtonRed}"  MinWidth="40" MinHeight="40" MaxWidth="40" MaxHeight="40" HorizontalAlignment="Right" Margin="15,5,5,15" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                <Button x:Name="Apply" Style="{StaticResource PopupButtonGreen}" MinWidth="40" MinHeight="40" MaxWidth="40" MaxHeight="40" HorizontalAlignment="Right" Margin="5,5,10,15" Background="{x:Null}" BorderBrush="{x:Null}"/>
+            </StackPanel>
+            <DockPanel x:Name="ContentPanel" Margin="10,0" Background="{StaticResource Gray3}">
+                <!--Project-->
+                <StackPanel x:Name="ProjectStack" Visibility="Collapsed">
+                    <DockPanel x:Name="DateStack" >
+                        <Label x:Name="CreationDate" DockPanel.Dock="Left" Foreground="{StaticResource Gray1}"/>
+                        <Label x:Name="LastModified" DockPanel.Dock="Right" Foreground="{StaticResource Gray1}"/>
+                    </DockPanel>
+                    <Label x:Name="LabelProjectName" Foreground="{StaticResource Gray1}" Margin="10,10,0,0"/>
+                    <TextBox x:Name="ProjectName" Padding="2,0,0,0" VerticalAlignment="Top" Margin="10,0,10,10" Background="{StaticResource Primary2}" Style="{StaticResource ComboBoxTextBox}" VerticalContentAlignment="Center" BorderThickness="1" BorderBrush="{x:Null}"/>
+                    <Label x:Name="LabelProjectLocation" Foreground="{StaticResource Gray1}" Margin="10,10,0,0"/>
+                    <DockPanel x:Name="LocationStack" >
+                        <Button x:Name="LocationBrowser" Background="{StaticResource Gray2}" Foreground="{StaticResource Primary2}" Style="{StaticResource ToggleButton}" HorizontalAlignment="Right" Margin="0,0,10,5" DockPanel.Dock="Right" MinWidth="100"/>
+                        <TextBox x:Name="ProjectLocation" Margin="10,0,10,5" Background="{StaticResource Primary2}" Style="{StaticResource ComboBoxTextBox}" VerticalContentAlignment="Center" Padding="2,0,0,0" BorderThickness="1" BorderBrush="{x:Null}"/>
+                    </DockPanel>
+                    <Label x:Name="LabelProjectBackup" Foreground="{StaticResource Gray1}" Margin="10,10,0,0"/>
+                    <DockPanel x:Name="BackupStack" >
+                        <Button x:Name="BackupBrowser" Background="{StaticResource Gray2}" Foreground="{StaticResource Primary2}" Style="{StaticResource ToggleButton}" HorizontalAlignment="Right" Margin="0,0,10,5" DockPanel.Dock="Right" MinWidth="100"/>
+                        <TextBox x:Name="ProjectBackup" Margin="10,0,10,5" Background="{StaticResource Primary2}" Style="{StaticResource ComboBoxTextBox}" VerticalContentAlignment="Center" Padding="2,0,0,0" BorderThickness="1" BorderBrush="{x:Null}" HorizontalContentAlignment="Stretch"/>
+                    </DockPanel>
+                    <Label x:Name="BookLabel" Foreground="{StaticResource Gray1}" Margin="10,10,0,0"/>
+                    <ScrollViewer x:Name="BookScroll" Style="{StaticResource ScrollViewer}" VerticalContentAlignment="Stretch" MaxHeight="200" HorizontalContentAlignment="Stretch" Margin="0,0,5,0">
+                        <DockPanel x:Name="BookStack" ScrollViewer.CanContentScroll="True"/>
+                    </ScrollViewer>
+                    <Button x:Name="AddBook" DockPanel.Dock="Bottom" Style="{StaticResource PopupButtonGreen}" Margin="10,0,10,5" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Left"/>
+                </StackPanel>
+                <!--Tasks-->
+                <DockPanel x:Name="TaskDock" Visibility="Collapsed">
+                    <DockPanel x:Name="AddTaskDock" Margin="10,5,10,0" VerticalAlignment="Top" Visibility="Collapsed" DockPanel.Dock="Bottom"/>
+                    <DockPanel x:Name="TaskOptionStack" DockPanel.Dock="Bottom" LastChildFill="False" >
+                        <Button x:Name="AddTaskBtn" Style="{StaticResource PopupButtonGreen}" Margin="10,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Left" MinHeight="40" MinWidth="40" MaxWidth="40" MaxHeight="40"/>
+                        <Button x:Name="ShowTasks" HorizontalAlignment="Right" MinHeight="30" MinWidth="100" DockPanel.Dock="Right" Padding="5" Margin="0,0,15,0" MaxHeight="30" MaxWidth="200" />
+                        <Button x:Name="SortTasksBtn" Style="{StaticResource PopupButtonBlue}" Margin="10,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Left" MinHeight="40" MinWidth="40" MaxWidth="40" MaxHeight="40" />
+                        <Button x:Name="ReloadBtn" Style="{StaticResource PopupButtonBlue}" Margin="10,0" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Left" MinHeight="40" MinWidth="40" MaxWidth="40" MaxHeight="40" />
+                    </DockPanel>
+                    <ScrollViewer x:Name="TaskScroll" Style="{StaticResource ScrollViewer}" VerticalContentAlignment="Stretch" MaxHeight="500" HorizontalContentAlignment="Stretch" Margin="5,15,5,5" DockPanel.Dock="Top" VerticalAlignment="Top">
+                        <StackPanel x:Name="TaskStack" Margin="0,0,10,0" ScrollViewer.CanContentScroll="True"/>
+                    </ScrollViewer>
+                </DockPanel>
+                <!--Attributes-->
+                <DockPanel x:Name="AttributesDock" Visibility="Collapsed">
+                    <DockPanel x:Name="AddAttributeDock" DockPanel.Dock="Bottom" Visibility="Collapsed" Margin="10,5,10,0" VerticalAlignment="Top"/>
+                    <Button x:Name="AddAttributeBtn" Style="{StaticResource PopupButtonGreen}" Margin="10,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Left" MinHeight="40" MinWidth="40" MaxWidth="40" MaxHeight="40" DockPanel.Dock="Bottom"/>
+                    <ScrollViewer x:Name="AttributeScroll" Style="{StaticResource ScrollViewer}" VerticalContentAlignment="Stretch" MaxHeight="500" HorizontalContentAlignment="Stretch" Margin="5,15,5,5" VerticalAlignment="Top" DockPanel.Dock="Top">
+                        <StackPanel x:Name="CustomAttributesStack" ScrollViewer.CanContentScroll="True" />
+                    </ScrollViewer>
+                </DockPanel>
+            </DockPanel>
+        </DockPanel>
+    </Grid>
+</Window>
